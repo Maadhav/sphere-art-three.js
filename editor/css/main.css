@@ -90,7 +90,7 @@ textarea, input { outline: none; } /* osx */
 
 /* Listbox */
 .Listbox {
-	color: #444;
+	color: #4f4f4f;
 	background-color: #fff;
 	padding: 0;
 	width: 100%;
@@ -245,7 +245,7 @@ textarea, input { outline: none; } /* osx */
 /*  */
 
 button {
-	color: #555;
+	color: #4F4F4F;
 	background-color: #ddd;
 	border: 0px;
 	margin: 0px; /* GNOME Web */
@@ -265,11 +265,11 @@ button {
 
 input, textarea {
 	border: 1px solid transparent;
-	color: #444;
+	color: #4f4f4f;
 }
 
 input.Number {
-	color: #08f!important;
+	color: #DA18A3!important;
 	font-size: 12px;
 	border: 0px;
 	padding: 2px;
@@ -356,7 +356,7 @@ select {
 
 		#menubar .menu .title {
 			display: inline-block;
-			color: #888;
+			color: #fff;
 			margin: 0;
 			padding: 8px;
 			line-height: 16px;
@@ -389,7 +389,7 @@ select {
 
 				#menubar .menu .options .option:hover {
 					color: #fff;
-					background-color: #08f;
+					background-color: #DA18A3;
 				}
 
 				#menubar .menu .options .option:active {
@@ -415,7 +415,7 @@ select {
 }
 
 	#sidebar .Panel {
-		color: #888;
+		color: #fff;
 		padding: 10px;
 		border-top: 1px solid #ccc;
 	}
@@ -445,7 +445,7 @@ select {
 	}
 
 	#tabs span.selected {
-		color: #888;
+		color: #fff;
 		background-color: #eee;
 	}
 
@@ -468,7 +468,7 @@ select {
 		}
 
 .Outliner {
-	color: #444;
+	color: #4f4f4f;
 	background-color: #fff;
 	padding: 0;
 	width: 100%;
@@ -503,20 +503,21 @@ select {
 	.TabbedPanel .Tab {
 		color: #aaa;
 		border-right: 1px solid #ccc;
+		background-color: #2D2E36;
 	}
 
 	.TabbedPanel .Tab.selected {
-		color: #888;
+		color: #fff;
 		background-color: #eee;
 	}
 
 .Listbox {
-	color: #444;
+	color: #4f4f4f;
 	background-color: #fff;
 }
 
 .Panel {
-	color: #888;
+	color: #fff;
 }
 
 /* */
@@ -571,63 +572,63 @@ select {
 
 	button {
 		color: #aaa;
-		background-color: #222;
+		background-color: #2A2D3A;
 	}
 
 		button:hover {
 			color: #ccc;
-			background-color: #444;
+			background-color: #4f4f4f;
 		}
 
 		button.selected {
 			color: #fff;
-			background-color: #08f;
+			background-color: #DA18A3;
 		}
 
 	input, textarea {
-		background-color: #222;
+		background-color: #2A2D3A;
 		border: 1px solid transparent;
-		color: #888;
+		color: #fff;
 	}
 
 	select {
 		color: #aaa;
-		background-color: #222;
+		background-color: #2A2D3A;
 	}
 
 		select:hover {
 			color: #ccc;
-			background-color: #444;
+			background-color: #4f4f4f;
 		}
 
 	/* UI */
 
 	#menubar {
-		background: #111;
+		background: #24252D;
 	}
 
 			#menubar .menu .options {
-				background: #111;
+				background: #24252D;
 			}
 
 				#menubar .menu .options hr {
-					border-color: #222;
+					border-color: #2A2D3A;
 				}
 
 				#menubar .menu .options .option {
-					color: #888;
+					color: #fff;
 				}
 
 			#menubar .menu .options .inactive {
-				color: #444;
+				color: #4f4f4f;
 			}
 
 	#sidebar {
-		background-color: #111;
+		background-color: #24252D;
 	}
 
 		#sidebar .Panel {
-			border-top: 1px solid #222;
+			border-top: 1px solid #2A2D3A;
 		}
 
 		#sidebar .Panel.Material canvas {
@@ -636,20 +637,20 @@ select {
 
 	#tabs {
 		background-color: #1b1b1b;
-		border-top: 1px solid #222;
+		border-top: 1px solid #2A2D3A;
 	}
 
 		#tabs span {
-			color: #555;
-			border-right: 1px solid #222;
+			color: #4F4F4F;
+			border-right: 1px solid #2A2D3A;
 		}
 
 		#tabs span.selected {
-			background-color: #111;
+			background-color: #24252D;
 		}
 
 	#toolbar {
-		background-color: #111;
+		background-color: #24252D;
 	}
 
 		#toolbar img {
@@ -657,8 +658,8 @@ select {
 		}
 
 	.Outliner {
-		color: #888;
-		background: #222;
+		color: #fff;
+		background: #2A2D3A;
 	}
 
 		.Outliner .option:hover {
@@ -671,22 +672,22 @@ select {
 
 	.TabbedPanel .Tabs {
 		background-color: #1b1b1b;
-		border-top: 1px solid #222;
+		border-top: 1px solid #2A2D3A;
 	}
 
 		.TabbedPanel .Tab {
-			color: #555;
-			border-right: 1px solid #222;
+			color: #4F4F4F;
+			border-right: 1px solid #2A2D3A;
 		}
 
 		.TabbedPanel .Tab.selected {
-			color: #888;
-			background-color: #111;
+			color: #fff;
+			background-color: #24252D;
 		}
 
 	.Listbox {
-		color: #888;
-		background: #222;
+		color: #fff;
+		background: #2A2D3A;
 	}
 
 	.Listbox .ListboxItem:hover {
