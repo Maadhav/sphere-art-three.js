@@ -100,7 +100,7 @@ function MenubarFile(editor) {
 
 			var blob = new Blob([zipped.buffer], { type: "application/zip" });
 
-			save(blob, (title !== "" ? title : "untitled") + ".zip");
+			save(blob, (title !== "" ? title : "untitled") + ".sphere");
 		});
 
 		var loader = new THREE.FileLoader(manager);

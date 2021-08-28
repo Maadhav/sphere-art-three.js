@@ -1,6 +1,6 @@
 {
-  "name": "Three.js Editor",
-  "short_name": "Three.js",
+  "name": "Sphere.ART Editor",
+  "short_name": "Sphere.ART",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
