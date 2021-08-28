@@ -8,7 +8,7 @@ const assets = [
 	'./manifest.json',
 	'./images/icon.png',
 
-	'../files/favicon.ico',
+	'../files/icon.ico',
 
 	'../build/three.module.js',
 
@@ -217,11 +217,7 @@ const assets = [
 
 	//
 
-	'./examples/arkanoid.app.json',
-	'./examples/camera.app.json',
-	'./examples/particles.app.json',
-	'./examples/pong.app.json',
-	'./examples/shaders.app.json'
+	'./examples/moon.app.json',
 
 ];
 
