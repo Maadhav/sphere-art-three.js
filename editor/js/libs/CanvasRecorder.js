@@ -45,7 +45,7 @@ class CanvasRecorder {
 
     const options = {
       mimeType: MIME,
-      videoBitsPerSecond: 2500 * 1000,
+      videoBitsPerSecond: 3000 * 1000,
     };
 
     return new Promise((resolve, reject) => {
