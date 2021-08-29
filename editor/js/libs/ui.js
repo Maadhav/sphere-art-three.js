@@ -995,6 +995,31 @@ class UIButton extends UIElement {
 
 }
 
+class UIDialog extends UIElement {
+
+	constructor(displayText) {
+
+		let modal = document.getElementById("myModal")
+		modal.style.display = "block";
+		let content = document.createElement('div')
+		content.className = "modal-content"
+		content.style = "left: 50%; top: 50%; position: absolute;transform: translate(-50%, -50%);"
+		let title = document.createElement('h3')
+		title.textContent = "Publishing Project"
+		let text = document.createElement('p')
+		text.textContent = displayText
+		content.appendChild(title)
+		content.appendChild(text)
+		modal.appendChild(content)
+		super( modal);
+	}
+
+	remove(){
+		let modal = document.getElementById("myModal")
+		modal.style.display = "none";
+	}
+
+}
 class UIProgress extends UIElement {
 
 	constructor( value ) {
@@ -1279,4 +1304,4 @@ class ListboxItem extends UIDiv {
 
 }
 
-export { UIElement, UISpan, UIDiv, UIRow, UIPanel, UIText, UIInput, UITextArea, UISelect, UICheckbox, UIColor, UINumber, UIInteger, UIBreak, UIHorizontalRule, UIButton, UIProgress, UITabbedPanel, UIListbox, ListboxItem };
+export { UIElement, UISpan, UIDiv, UIRow, UIPanel, UIText, UIInput, UITextArea, UISelect, UICheckbox, UIColor, UINumber, UIInteger, UIBreak, UIHorizontalRule, UIButton, UIDialog, UIProgress, UITabbedPanel, UIListbox, ListboxItem };

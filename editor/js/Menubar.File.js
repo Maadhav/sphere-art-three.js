@@ -2,7 +2,7 @@ import * as THREE from "../../build/three.module.js";
 
 import { zipSync, strToU8, convertDataURIToBinary } from "../../examples/jsm/libs/fflate.module.js";
 
-import { UIPanel, UIRow, UIHorizontalRule } from "./libs/ui.js";
+import { UIPanel, UIRow, UIHorizontalRule, UIDialog } from "./libs/ui.js";
 import { APP } from "./libs/app.js";
 function MenubarFile(editor) {
 	var config = editor.config;
@@ -70,11 +70,21 @@ function MenubarFile(editor) {
 	option.setTextContent(strings.getKey("menubar/file/publish"));
 	option.onClick(async function () {
 		async function sleep (){
-			return new Promise(resolve => setTimeout(resolve, 7000));
+			return new Promise(resolve => setTimeout(resolve, 1400));
 		}
+		new UIDialog("Preparing ...");
 		var signals = editor.signals;
 		await signals.record.dispatch();
 		await sleep()
+		new UIDialog("Generating thumbnail.png...");
+		await sleep()
+		new UIDialog("Generating preview.webm...");
+		await sleep()
+		new UIDialog("Generating app.json...");
+		await sleep()
+		new UIDialog("Compressing files...");
+		await sleep()
+		new UIDialog("Downloading...").remove();
 		var toZip = {};
 
 		//
