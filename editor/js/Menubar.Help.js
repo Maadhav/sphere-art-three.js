@@ -61,7 +61,7 @@ function MenubarHelp( editor ) {
 	option.setTextContent( strings.getKey( 'menubar/help/manual' ) );
 	option.onClick( function () {
 
-		window.open( 'https://github.com/mrdoob/three.js/wiki/Editor-Manual', '_blank' );
+		window.open( 'https://sphereart-editor.netlify.app/editor/docs/docs.md', '_blank' );
 
 	} );
 	options.add( option );

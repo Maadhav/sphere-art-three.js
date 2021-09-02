@@ -43,12 +43,14 @@ function Player(editor) {
 		var video = document.createElement("video");
 		await recorder.initialize(player.rendererElement, video);
 		await recorder.start();
-		setTimeout(async ()  => {
+		setTimeout(() => {
 			editor.thumbnail = player.rendererElement.toDataURL();
+		}, 100);
+		setTimeout(async () => {
 			recorder.stop();
-			editor.preview = await (recorder.toBlob()).arrayBuffer();
+			editor.preview = await recorder.toBlob().arrayBuffer();
 			container.setDisplay("none");
-			console.log(editor)
+			console.log(editor);
 			player.stop();
 			player.dispose();
 		}, 6000);

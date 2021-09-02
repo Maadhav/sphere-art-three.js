@@ -85,6 +85,7 @@ function MenubarFile(editor) {
 		new UIDialog("Compressing files...");
 		await sleep()
 		new UIDialog("Downloading...").remove();
+		await sleep()
 		var toZip = {};
 
 		//
