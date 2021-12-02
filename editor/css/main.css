@@ -1,725 +1,829 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
 :root {
-	color-scheme: light dark;
+  color-scheme: light dark;
+  --red-violet: #da18a3;
+  --red-linear: linear-gradient(
+    101.12deg,
+    #eb1484 27.35%,
+    #c91cc3 99.99%,
+    #c81cc5 100%,
+    #c81cc5 0
+  );
+  --dark: #24252d;
+  --gray-1: #e3e1e3;
+  --gray-2: #888;
+  --gray-3: #4f4f4f;
+  --black-1: #2d2e36;
+  --black-2: #1b1a21;
+  --black-3: #2a2d3a;
+  --black-4: #24252d;
+  --p1: 16px;
+  --p2: 14px;
+  --p3: 12px;
+  --p4: 10px;
 }
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	margin: 0;
-	overflow: hidden;
+  font-family: "Poppins";
+  font-size: 14px;
+  margin: 0;
+  overflow: hidden;
 }
 
 hr {
-	border: 0;
-	border-top: 1px solid #ccc;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 button {
-	position: relative;
+  position: relative;
 }
 
 input {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
-	input[type="color"]::-webkit-color-swatch-wrapper {
-		padding: 0;
-	}
-	input[type="color"]::-webkit-color-swatch {
-		border: none;
-	}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
 
 textarea {
-	tab-size: 4;
-	white-space: pre;
-	word-wrap: normal;
-	vertical-align: middle;
+  tab-size: 4;
+  white-space: pre;
+  word-wrap: normal;
+  vertical-align: middle;
 }
 
-	textarea.success {
-		border-color: #8b8 !important;
-	}
+textarea.success {
+  border-color: #8b8 !important;
+}
 
-	textarea.fail {
-		border-color: #f00 !important;
-		background-color: rgba(255,0,0,0.05);
-	}
+textarea.fail {
+  border-color: #f00 !important;
+  background-color: rgba(255, 0, 0, 0.05);
+}
 
-textarea, input { outline: none; } /* osx */
+textarea,
+input {
+  outline: none;
+} /* osx */
 
 .Panel {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 
-	/* No support for these yet */
-	-o-user-select: none;
-	user-select: none;
+  /* No support for these yet */
+  -o-user-select: none;
+  user-select: none;
 }
 
 .TabbedPanel {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 
-	/* No support for these yet */
-	-o-user-select: none;
-	user-select: none;
-	position: relative;
-	display: block;
-	width: 100%;
+  /* No support for these yet */
+  -o-user-select: none;
+  user-select: none;
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
 .TabbedPanel .Tabs {
-	position: relative;
-	display: block;
-	width: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
 .TabbedPanel .Tabs .Tab {
-	padding: 10px;
-	text-transform: uppercase;
+  padding: 10px;
+  text-transform: uppercase;
 }
 
 .TabbedPanel .Tabs .Panels {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Listbox */
 .Listbox {
-	color: #4f4f4f;
-	background-color: #fff;
-	padding: 0;
-	width: 100%;
-	min-height: 140px;
-	font-size: 12px;
-	cursor: default;
-	overflow: auto;
+  color: #4f4f4f;
+  background-color: #fff;
+  padding: 0;
+  width: 100%;
+  min-height: 140px;
+  font-size: 12px;
+  cursor: default;
+  overflow: auto;
 }
 
 .Listbox .ListboxItem {
-	padding: 6px;
-	color: #666;
-	white-space: nowrap;
+  padding: 6px;
+  color: #666;
+  white-space: nowrap;
 }
 
 .Listbox .ListboxItem.active {
-	background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 /* CodeMirror */
 
 .CodeMirror {
-
-	position: absolute !important;
-	top: 37px;
-	width: 100% !important;
-	height: calc(100% - 37px) !important;
-
+  position: absolute !important;
+  top: 37px;
+  width: 100% !important;
+  height: calc(100% - 37px) !important;
 }
 
-	.CodeMirror .errorLine {
+.CodeMirror .errorLine {
+  background: rgba(255, 0, 0, 0.25);
+}
 
-		background: rgba(255,0,0,0.25);
-
-	}
-
-	.CodeMirror .esprima-error {
-
-		color: #f00;
-		text-align: right;
-		padding: 0 20px;
-
-	}
+.CodeMirror .esprima-error {
+  color: #f00;
+  text-align: right;
+  padding: 0 20px;
+}
 
 /* outliner */
 
 #outliner .opener {
-	display: inline-block;
-	width: 14px;
-	height: 14px;
-	margin: 0px 4px;
-	vertical-align: top;
-	text-align: center;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0px 4px;
+  vertical-align: top;
+  text-align: center;
 }
 
-	#outliner .opener.open:after {
-		content: '−';
-	}
+#outliner .opener.open:after {
+  content: "−";
+}
 
-	#outliner .opener.closed:after {
-		content: '+';
-	}
+#outliner .opener.closed:after {
+  content: "+";
+}
 
 #outliner .option {
-
-	border: 1px solid transparent;
-
+  border: 1px solid transparent;
 }
 
 #outliner .option.drag {
-
-	border: 1px dashed #999;
-
+  border: 1px dashed #999;
 }
 
 #outliner .option.dragTop {
-
-	border-top: 1px dashed #999;
-
+  border-top: 1px dashed #999;
 }
 
 #outliner .option.dragBottom {
-
-	border-bottom: 1px dashed #999;
-
+  border-bottom: 1px dashed #999;
 }
 
 #outliner .type {
-	display: inline-block;
-	width: 14px;
-	height: 14px;
-	color: #ddd;
-	text-align: center;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  color: #ddd;
+  text-align: center;
 }
 
 #outliner .type:after {
-	content: '●';
+  content: "●";
 }
 
 /* */
 
 #outliner .Scene {
-	color: #8888dd;
+  color: #8888dd;
 }
 
 #outliner .Camera {
-	color: #dd8888;
+  color: #dd8888;
 }
 
 #outliner .Light {
-	color: #dddd88;
+  color: #dddd88;
 }
 
 /* */
 
 #outliner .Object3D {
-	color: #aaaaee;
+  color: #aaaaee;
 }
 
 #outliner .Mesh {
-	color: #8888ee;
+  color: #8888ee;
 }
 
 #outliner .Line {
-	color: #88ee88;
+  color: #88ee88;
 }
 
 #outliner .LineSegments {
-	color: #88ee88;
+  color: #88ee88;
 }
 
 #outliner .Points {
-	color: #ee8888;
+  color: #ee8888;
 }
 
 /* */
 
 #outliner .Geometry {
-	color: #aaeeaa;
+  color: #aaeeaa;
 }
 
 #outliner .Material {
-	color: #eeaaee;
+  color: #eeaaee;
 }
 
 /* */
 
 #outliner .Script:after {
-	content: '◎'
+  content: "◎";
 }
 
 /*  */
 
 button {
-	color: #4F4F4F;
-	background-color: #ddd;
-	border: 0px;
-	margin: 0px; /* GNOME Web */
-	padding: 5px 8px;
-	text-transform: uppercase;
-	cursor: pointer;
-	outline: none;
+  color: #4f4f4f;
+  background-color: #ddd;
+  border: 0px;
+  margin: 0px; /* GNOME Web */
+  padding: 5px 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
 }
 
-	button:hover {
-		background-color: #fff;
-	}
+button:hover {
+  background-color: #fff;
+}
 
-	button.selected {
-		background-color: #fff;
-	}
+button.selected {
+  background-color: #fff;
+}
 
-input, textarea {
-	border: 1px solid transparent;
-	color: #4f4f4f;
+input,
+textarea {
+  border: 1px solid transparent;
+  color: #4f4f4f;
 }
 
 input.Number {
-	color: #DA18A3!important;
-	font-size: 12px;
-	border: 0px;
-	padding: 2px;
+  color: #da18a3 !important;
+  font-size: 12px;
+  border: 0px;
+  padding: 2px;
 }
 
 select {
-	color: #666;
-	background-color: #ddd;
-	border: 0px;
-	text-transform: uppercase;
-	cursor: pointer;
-	outline: none;
+  color: #666;
+  background-color: #ddd;
+  border: 0px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
 }
 
-	select:hover {
-		background-color: #fff;
-	}
+select:hover {
+  background-color: #fff;
+}
 
 /* UI */
 
 #resizer {
-	position: absolute;
-	top: 32px;
-	right: 295px;
-	width: 5px;
-	bottom: 0px;
-	/* background-color: rgba(255,0,0,0.5); */
-	cursor: col-resize;
+  position: absolute;
+  top: 32px;
+  right: 295px;
+  width: 5px;
+  bottom: 0px;
+  /* background-color: rgba(255,0,0,0.5); */
+  cursor: col-resize;
 }
 
 #viewport {
-	position: absolute;
-	top: 32px;
-	left: 0;
-	right: 300px;
-	bottom: 0;
+  position: absolute;
+  top: 32px;
+  left: 80px;
+  right: 300px;
+  bottom: 0;
 }
 
-	#viewport #info {
-		text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
-		pointer-events: none;
-	}
+#viewport #info {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
 
 #script {
-	position: absolute;
-	top: 32px;
-	left: 0;
-	right: 300px;
-	bottom: 0;
-	opacity: 0.9;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 300px;
+  bottom: 0;
+  opacity: 0.9;
 }
 
 #player {
-	position: absolute;
-	top: 32px;
-	left: 0;
-	right: 300px;
-	bottom: 0;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 300px;
+  bottom: 0;
 }
 
 #menubar {
-	position: absolute;
-	width: 100%;
-	height: 32px;
-	background: #eee;
-	padding: 0;
-	margin: 0;
-	right: 0;
-	top: 0;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 32px;
+  background: #eee;
+  padding: 0;
+  margin: 0;
+  right: 0;
+  top: 0;
 }
 
-	#menubar .menu {
-		float: left;
-		cursor: pointer;
-		padding-right: 8px;
-	}
+#menubar .menu {
+  float: left;
+  cursor: pointer;
+  padding-right: 8px;
+}
 
-	#menubar .menu.right {
-		float: right;
-		cursor: auto;
-		padding-right: 0;
-		text-align: right;
-	}
+#menubar .menu.right {
+  float: right;
+  cursor: auto;
+  padding-right: 0;
+  text-align: right;
+}
 
-		#menubar .menu .title {
-			display: inline-block;
-			color: #fff;
-			margin: 0;
-			padding: 8px;
-			line-height: 16px;
-		}
+#menubar .menu .title {
+  display: inline-block;
+  color: #fff;
+  margin: 0;
+  padding: 8px;
+  line-height: 16px;
+}
 
-		#menubar .menu .options {
-			position: fixed;
-			display: none;
-			padding: 5px 0;
-			background: #eee;
-			width: 150px;
-			max-height: calc(100% - 80px);
-			overflow: auto;
-		}
+#menubar .menu .options {
+  position: fixed;
+  display: none;
+  padding: 5px 0;
+  background: #eee;
+  width: 150px;
+  max-height: calc(100% - 80px);
+  overflow: auto;
+}
 
-		#menubar .menu:hover .options {
-			display: block;
-		}
+#menubar .menu:hover .options {
+  display: block;
+}
 
-			#menubar .menu .options hr {
-				border-color: #ddd;
-			}
+#menubar .menu .options hr {
+  border-color: #ddd;
+}
 
-			#menubar .menu .options .option {
-				color: #666;
-				background-color: transparent;
-				padding: 5px 10px;
-				margin: 0 !important;
-			}
+#menubar .menu .options .option {
+  color: #666;
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: 0 !important;
+}
 
-				#menubar .menu .options .option:hover {
-					color: #fff;
-					background-color: #DA18A3;
-				}
+#menubar .menu .options .option:hover {
+  color: #fff;
+  background-color: #da18a3;
+}
 
-				#menubar .menu .options .option:active {
-					color: #666;
-					background: transparent;
-				}
+#menubar .menu .options .option:active {
+  color: #666;
+  background: transparent;
+}
 
-		#menubar .menu .options .inactive {
-			color: #bbb;
-			background-color: transparent;
-			padding: 5px 10px;
-			margin: 0 !important;
-		}
+#menubar .menu .options .inactive {
+  color: #bbb;
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: 0 !important;
+}
 
 #sidebar {
-	position: absolute;
-	right: 0;
-	top: 32px;
-	bottom: 0;
-	width: 300px;
-	background: #eee;
-	overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 80px;
+  bottom: 0;
+  width: 300px;
+  background: #eee;
+  overflow: auto;
 }
 
-	#sidebar .Panel {
-		color: #fff;
-		padding: 10px;
-		border-top: 1px solid #ccc;
-	}
+#sidebar .Panel {
+  color: #fff;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
 
-	#sidebar .Panel.collapsed {
-		margin-bottom: 0;
-	}
+#sidebar .Panel.collapsed {
+  margin-bottom: 0;
+}
 
-	#sidebar .Row {
-		min-height: 20px;
-		margin-bottom: 10px;
-	}
+#sidebar .Row {
+  min-height: 20px;
+  margin-bottom: 10px;
+}
 
-	#sidebar canvas {
-		vertical-align: middle;
-	}
+#sidebar canvas {
+  vertical-align: middle;
+}
 
 #tabs {
-	background-color: #ddd;
-	border-top: 1px solid #ccc;
+  background-color: #ddd;
+  border-top: 1px solid #ccc;
 }
 
-	#tabs span {
-		color: #aaa;
-		border-right: 1px solid #ccc;
-		padding: 10px;
-	}
+#tabs span {
+  color: #aaa;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
 
-	#tabs span.selected {
-		color: #fff;
-		background-color: #eee;
-	}
+#tabs span.selected {
+  color: #fff;
+  background-color: #eee;
+}
 
 #toolbar {
-	position: absolute;
-	left: 10px;
-	top: 42px;
-	width: 32px;
-	background: #eee;
-	text-align: center;
+  position: absolute;
+  left: 90px;
+  top: 92px;
+  width: 32px;
+  background: #eee;
+  text-align: center;
 }
 
-	#toolbar button, #toolbar input {
-		height: 32px;
-	}
+#toolbar button,
+#toolbar input {
+  height: 32px;
+}
 
-		#toolbar button img {
-			width: 16px;
-			opacity: 0.5;
-		}
+#toolbar button img {
+  width: 16px;
+  opacity: 0.5;
+}
 
 .Outliner {
-	color: #4f4f4f;
-	background-color: #fff;
-	padding: 0;
-	width: 100%;
-	height: 140px;
-	font-size: 12px;
-	cursor: default;
-	overflow: auto;
-	resize: vertical;
-	outline: none !important;
+  color: #4f4f4f;
+  background-color: #fff;
+  padding: 0;
+  width: 100%;
+  height: 140px;
+  font-size: 12px;
+  cursor: default;
+  overflow: auto;
+  resize: vertical;
+  outline: none !important;
 }
 
-	.Outliner .option {
-		padding: 4px;
-		color: #666;
-		white-space: nowrap;
-	}
+.Outliner .option {
+  padding: 4px;
+  color: #666;
+  white-space: nowrap;
+}
 
-	.Outliner .option:hover {
-		background-color: rgba(0,0,0,0.02);
-	}
+.Outliner .option:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
 
-	.Outliner .option.active {
-		background-color: rgba(0,0,0,0.04);
-	}
-
+.Outliner .option.active {
+  background-color: rgba(0, 0, 0, 0.04);
+}
 
 .TabbedPanel .Tabs {
-	background-color: #ddd;
-	border-top: 1px solid #ccc;
+  background-color: #ddd;
+  border-top: 1px solid #ccc;
 }
 
-	.TabbedPanel .Tab {
-		color: #aaa;
-		border-right: 1px solid #ccc;
-		background-color: #2D2E36;
-	}
+.TabbedPanel .Tab {
+  color: #aaa;
+  border-right: 1px solid #ccc;
+  background-color: #2d2e36;
+}
 
-	.TabbedPanel .Tab.selected {
-		color: #fff;
-		background-color: #eee;
-	}
+.TabbedPanel .Tab.selected {
+  color: #fff;
+  background-color: #eee;
+}
 
 .Listbox {
-	color: #4f4f4f;
-	background-color: #fff;
+  color: #4f4f4f;
+  background-color: #fff;
 }
 
 .Panel {
-	color: #fff;
+  color: #fff;
+}
+
+.test {
+  height: 100%;
+  width: 80px;
+  z-index: 1;
+  background-color: var(--dark);
+  position: absolute;
+  padding-top: 30px;
+}
+
+.test-menu {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-menu:hover {
+  background-color: var(--gray-3);
+}
+
+.test-text {
+  color: #fff;
+  font-size: var(--p4);
+}
+
+#menu-options {
+  aspect-ratio: 1;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-options .text {
+  color: white;
+  font-size: var(--p4);
+  text-align: center;
+}
+
+#menu-options .icon {
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+
+#menu-options:hover {
+  background-color: var(--gray-3);
+}
+
+#side-menu-bar {
+  height: 100%;
+  width: 80px;
+  z-index: 1;
+  background-color: var(--dark);
+  position: absolute;
+  padding-top: 80px;
+}
+
+#navbar {
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	z-index: 2;
+	background-color: var(--black-2);
+	height: 80px;
+}
+
+#navbar #leading {
+	display: flex;
+	align-items: center;
+	gap: 0 43px;
+}
+
+#navbar #leading #logo {
+	height: 40px;
+	width: 40px;
+	background: var(--red-linear);
+	border-radius: 50%;
+}
+
+#navbar #leading input {
+	font-size: var(--p1);
+	color: white;
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
 }
 
 /* */
 
-@media all and ( max-width: 600px ) {
+@media all and (max-width: 600px) {
+  #resizer {
+    display: none;
+  }
 
-	#resizer {
-		display: none;
-	}
+  #menubar .menu .options {
+    max-height: calc(100% - 372px);
+  }
 
-	#menubar .menu .options {
-		max-height: calc(100% - 372px);
-	}
+  #menubar .menu.right {
+    display: none;
+  }
 
-	#menubar .menu.right {
-		display: none;
-	}
+  #viewport {
+    left: 0;
+    right: 0;
+    top: 32px;
+    height: calc(100% - 352px);
+  }
 
-	#viewport {
-		left: 0;
-		right: 0;
-		top: 32px;
-		height: calc(100% - 352px);
-	}
+  #script {
+    left: 0;
+    right: 0;
+    top: 32px;
+    height: calc(100% - 352px);
+  }
 
-	#script {
-		left: 0;
-		right: 0;
-		top: 32px;
-		height: calc(100% - 352px);
-	}
+  #player {
+    left: 0;
+    right: 0;
+    top: 32px;
+    height: calc(100% - 352px);
+  }
 
-	#player {
-		left: 0;
-		right: 0;
-		top: 32px;
-		height: calc(100% - 352px);
-	}
-
-	#sidebar {
-		left: 0;
-		width: 100%;
-		top: calc(100% - 320px);
-		bottom: 0;
-	}
-
+  #sidebar {
+    left: 0;
+    width: 100%;
+    top: calc(100% - 320px);
+    bottom: 0;
+  }
 }
 
 /* DARK MODE */
 
-@media ( prefers-color-scheme: dark ) {
+@media (prefers-color-scheme: dark) {
+  button {
+    color: #aaa;
+    background-color: #2a2d3a;
+  }
 
-	button {
-		color: #aaa;
-		background-color: #2A2D3A;
-	}
+  button:hover {
+    color: #ccc;
+    background-color: #4f4f4f;
+  }
 
-		button:hover {
-			color: #ccc;
-			background-color: #4f4f4f;
-		}
+  button.selected {
+    color: #fff;
+    background-color: #da18a3;
+  }
 
-		button.selected {
-			color: #fff;
-			background-color: #DA18A3;
-		}
+  input,
+  textarea {
+    background-color: #2a2d3a;
+    border: 1px solid transparent;
+    color: #fff;
+  }
 
-	input, textarea {
-		background-color: #2A2D3A;
-		border: 1px solid transparent;
-		color: #fff;
-	}
+  select {
+    color: #aaa;
+    background-color: #2a2d3a;
+  }
 
-	select {
-		color: #aaa;
-		background-color: #2A2D3A;
-	}
+  select:hover {
+    color: #ccc;
+    background-color: #4f4f4f;
+  }
 
-		select:hover {
-			color: #ccc;
-			background-color: #4f4f4f;
-		}
+  /* UI */
 
-	/* UI */
+  #menubar {
+    background: #24252d;
+  }
 
-	#menubar {
-		background: #24252D;
-	}
+  #menubar .menu .options {
+    background: #24252d;
+  }
 
-			#menubar .menu .options {
-				background: #24252D;
-			}
+  #menubar .menu .options hr {
+    border-color: #2a2d3a;
+  }
 
-				#menubar .menu .options hr {
-					border-color: #2A2D3A;
-				}
+  #menubar .menu .options .option {
+    color: #fff;
+  }
 
-				#menubar .menu .options .option {
-					color: #fff;
-				}
+  #menubar .menu .options .inactive {
+    color: #4f4f4f;
+  }
 
-			#menubar .menu .options .inactive {
-				color: #4f4f4f;
-			}
+  #sidebar {
+    background-color: #24252d;
+  }
 
-	#sidebar {
-		background-color: #24252D;
-	}
+  #sidebar .Panel {
+    border-top: 1px solid #2a2d3a;
+  }
 
-		#sidebar .Panel {
-			border-top: 1px solid #2A2D3A;
-		}
+  #sidebar .Panel.Material canvas {
+    border: solid 1px #5a5a5a;
+  }
 
-		#sidebar .Panel.Material canvas {
-			border: solid 1px #5A5A5A;
-		}
+  #tabs {
+    background-color: #1b1b1b;
+    border-top: 1px solid #2a2d3a;
+  }
 
-	#tabs {
-		background-color: #1b1b1b;
-		border-top: 1px solid #2A2D3A;
-	}
+  #tabs span {
+    color: #4f4f4f;
+    border-right: 1px solid #2a2d3a;
+  }
 
-		#tabs span {
-			color: #4F4F4F;
-			border-right: 1px solid #2A2D3A;
-		}
+  #tabs span.selected {
+    background-color: #24252d;
+  }
 
-		#tabs span.selected {
-			background-color: #24252D;
-		}
+  #toolbar {
+    background-color: #24252d;
+  }
 
-	#toolbar {
-		background-color: #24252D;
-	}
+  #toolbar img {
+    filter: invert(1);
+  }
 
-		#toolbar img {
-			filter: invert(1);
-		}
+  .Outliner {
+    color: #fff;
+    background: #2a2d3a;
+  }
 
-	.Outliner {
-		color: #fff;
-		background: #2A2D3A;
-	}
+  .Outliner .option:hover {
+    background-color: rgba(21, 60, 94, 0.5);
+  }
 
-		.Outliner .option:hover {
-			background-color: rgba(21,60,94,0.5);
-		}
+  .Outliner .option.active {
+    background-color: rgba(21, 60, 94, 1);
+  }
 
-		.Outliner .option.active {
-			background-color: rgba(21,60,94,1);
-		}
+  .TabbedPanel .Tabs {
+    background-color: #1b1b1b;
+    border-top: 1px solid #2a2d3a;
+  }
 
-	.TabbedPanel .Tabs {
-		background-color: #1b1b1b;
-		border-top: 1px solid #2A2D3A;
-	}
+  .TabbedPanel .Tab {
+    color: #4f4f4f;
+    border-right: 1px solid #2a2d3a;
+  }
 
-		.TabbedPanel .Tab {
-			color: #4F4F4F;
-			border-right: 1px solid #2A2D3A;
-		}
+  .TabbedPanel .Tab.selected {
+    color: #fff;
+    background-color: #24252d;
+  }
 
-		.TabbedPanel .Tab.selected {
-			color: #fff;
-			background-color: #24252D;
-		}
+  .Listbox {
+    color: #fff;
+    background: #2a2d3a;
+  }
 
-	.Listbox {
-		color: #fff;
-		background: #2A2D3A;
-	}
+  .Listbox .ListboxItem:hover {
+    background-color: rgba(21, 60, 94, 0.5);
+  }
 
-	.Listbox .ListboxItem:hover {
-		background-color: rgba(21,60,94,0.5);
-	}
-
-	.Listbox .ListboxItem.active {
-		background-color: rgba(21,60,94,1);
-	}
+  .Listbox .ListboxItem.active {
+    background-color: rgba(21, 60, 94, 1);
+  }
 }
 
 /* The Modal (background) */
 .modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-	background-color: #24252D;
-	margin: auto;
-	padding: 20px;
-	border: 1px solid #2A2D3A;
-	width: 50%;
-  }
-  
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #24252d;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #2a2d3a;
+  width: 50%;
+}

@@ -70,6 +70,11 @@ function Strings( config ) {
 			'menubar/view': 'View',
 			'menubar/view/fullscreen': 'Fullscreen',
 
+			// Edited by Kunal
+			'menubar/import': 'Import',
+			'menubar/export': 'Export',
+			'menubar/settings': 'Settings',
+
 			'menubar/help': 'Help',
 			'menubar/help/source_code': 'Source Code',
 			'menubar/help/icons': 'Icon Pack',

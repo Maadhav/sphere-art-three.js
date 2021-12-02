@@ -83,6 +83,14 @@ const assets = [
 	'./images/scale.svg',
 	'./images/translate.svg',
 
+	/// Added Icons by me
+	'./images/add.svg',
+	'./images/examples.svg',
+	'./images/view.svg',
+	'./images/import.svg',
+	'./images/export.svg',
+	'./images/settings.svg',
+
 	'./js/libs/codemirror/codemirror.css',
 	'./js/libs/codemirror/theme/monokai.css',
 
@@ -133,14 +141,8 @@ const assets = [
 	'./js/Loader.js',
 	'./js/LoaderUtils.js',
 	'./js/Menubar.js',
-	'./js/Menubar.File.js',
-	'./js/Menubar.Edit.js',
-	'./js/Menubar.Add.js',
-	'./js/Menubar.Play.js',
-	'./js/Menubar.Examples.js',
-	'./js/Menubar.Help.js',
-	'./js/Menubar.View.js',
-	'./js/Menubar.Status.js',
+	'./js/Menubar.Options.js',
+	'./js/NavBar.js',
 	'./js/Resizer.js',
 	'./js/Sidebar.js',
 	'./js/Sidebar.Scene.js',
@@ -190,6 +192,7 @@ const assets = [
 	'./js/Viewport.Info.js',
 	'./js/Viewport.ViewHelper.js',
 	'./js/Viewport.VR.js',
+
 
 	'./js/Command.js',
 	'./js/commands/AddObjectCommand.js',

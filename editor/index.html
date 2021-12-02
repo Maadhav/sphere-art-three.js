@@ -54,6 +54,7 @@
 		import * as THREE from '../build/three.module.js';
 
 		import { Editor } from './js/Editor.js';
+		import {NavBar} from './js/NavBar.js';
 		import { Viewport } from './js/Viewport.js';
 		import { Toolbar } from './js/Toolbar.js';
 		import { Script } from './js/Script.js';
@@ -100,7 +101,10 @@
 
 		var resizer = new Resizer(editor);
 		document.body.appendChild(resizer.dom);
-
+		/// Edited by Kunal 
+		
+		var navbar = new NavBar(editor);
+		document.body.appendChild(navbar.dom);
 		//
 
 		editor.storage.init(function () {
