@@ -594,38 +594,103 @@ select:hover {
 }
 
 #navbar {
-	position: sticky;
-	top: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 20px;
-	z-index: 2;
-	background-color: var(--black-2);
-	height: 80px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 2;
+  background-color: var(--black-2);
+  height: 80px;
 }
 
-#navbar #leading {
-	display: flex;
-	align-items: center;
-	gap: 0 43px;
+#navbar #navbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0 43px;
 }
 
-#navbar #leading #logo {
-	height: 40px;
-	width: 40px;
-	background: var(--red-linear);
-	border-radius: 50%;
+#navbar #navbar-left #logo {
+  height: 40px;
+  width: 40px;
+  background: var(--red-linear);
+  border-radius: 50%;
 }
 
-#navbar #leading input {
-	font-size: var(--p1);
-	color: white;
-	background: transparent;
-	border: none;
-	outline: none;
-	cursor: pointer;
+#navbar #navbar-left input {
+  font-size: var(--p1);
+  font-family: 'Poppins';
+  color: white;
+  background: transparent;
+  border: none !important;
+  outline: none;
+  cursor: pointer;
 }
+
+#navbar #navbar-center {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0 12px;
+  justify-content: center;
+}
+
+#navbar #navbar-center .divider {
+  width: 1px;
+  height: 30px;
+  opacity: .2;
+  background-color: #c4c4c4;
+}
+
+#navbar #navbar-center #viewport-size {
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  background-color: var(--gray-3);
+}
+
+#navbar #navbar-center img {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+
+#navbar #navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0 35px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+#navbar #navbar-right #save-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: var(--p1);
+  border-radius: 5px;
+  display: flex;
+  gap: 0 5px;
+  align-items: center;
+  background-color: var(--red-violet);
+  color: white;
+}
+
+#navbar #navbar-right #download-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: var(--p1);
+  border-radius: 5px;
+  display: flex;
+  gap: 0 5px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--red-violet);
+  color: var(--red-violet);
+}
+
+
 
 /* */
 
