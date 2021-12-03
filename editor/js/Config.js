@@ -7,7 +7,8 @@ function Config() {
 
 		'autosave': true,
 
-		'project/title': '',
+		'project/title': 'Untitled Sphere', 
+		'project/zoom': 100,
 		'project/editable': false,
 		'project/vr': false,
 

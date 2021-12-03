@@ -645,8 +645,10 @@ select:hover {
 }
 
 #navbar #navbar-center #viewport-size {
-  padding: 5px 10px;
+  padding: 2px 0;
+  width: 60px;
   color: white;
+  text-align: center;
   border-radius: 5px;
   background-color: var(--gray-3);
 }
