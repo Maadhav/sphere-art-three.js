@@ -30,7 +30,7 @@ function MenubarStatus( editor ) {
 	editor.signals.savingStarted.add( function () {
 
 		autosave.text.setTextDecoration( 'underline' );
-
+		
 	} );
 
 	editor.signals.savingFinished.add( function () {
