@@ -314,7 +314,7 @@ select:hover {
 
 #viewport {
   position: absolute;
-  top: 32px;
+  top: 80px;
   left: 80px;
   right: 300px;
   bottom: 0;
@@ -558,7 +558,7 @@ select:hover {
   font-size: var(--p4);
 }
 
-#menu-options {
+.menu-options {
   aspect-ratio: 1;
   cursor: pointer;
   display: flex;
@@ -568,21 +568,26 @@ select:hover {
   justify-content: center;
 }
 
-#menu-options .text {
+.menu-options .text {
   color: white;
   font-size: var(--p4);
   text-align: center;
 }
 
-#menu-options .icon {
+.menu-options .icon {
   width: 25px;
   height: 25px;
   color: white;
 }
 
-#menu-options:hover {
+.menu-options:hover {
   background-color: var(--gray-3);
 }
+
+.menu-options.active {
+  background-color: var(--gray-3);
+}
+
 
 #side-menu-bar {
   height: 100%;
@@ -690,6 +695,16 @@ select:hover {
   color: var(--red-violet);
 }
 
+#menu-sidebar {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  left: 80px;
+  top: 80px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--black-1);
+}
 
 
 /* */
@@ -710,7 +725,7 @@ select:hover {
   #viewport {
     left: 0;
     right: 0;
-    top: 32px;
+    top: 80px;
     height: calc(100% - 352px);
   }
 

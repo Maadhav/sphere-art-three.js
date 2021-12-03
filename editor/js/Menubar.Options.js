@@ -5,21 +5,29 @@ import { UIDiv } from './libs/ui.js';
 function MenubarOptions(editor, name) {
 	var strings = editor.strings;
 	var menu = new UIDiv()
-	menu.setId('menu-options')
+	menu.addClass('menu-options')
 	menu.dom.dataset.icon = name;
 
 	var icon = document.createElement('img');
-	icon.src = 'images/'+name+'.svg';
+	icon.src = 'images/' + name + '.svg';
 	icon.className = 'icon';
-	
+
 	menu.dom.appendChild(icon);
 	var text = new UIDiv()
-	text.setTextContent(strings.getKey('menubar/'+name))
+	text.setTextContent(strings.getKey('menubar/' + name))
 	text.setClass('text')
 
 	menu.add(text)
-	menu.dom.addEventListener('click', function(event) {
-		console.log(event.currentTarget.dataset.icon)
+	menu.dom.addEventListener('click', function (event) {
+		console.log(document.getElementsByClassName('menu-options'))
+
+		menu.dom.classList.add('active')
+		var element = document.getElementById('menu-sidebar');
+		if (element.style.display == 'none') {
+			element.style.display = 'block';
+		} else {
+			element.style.display = 'none';
+		}
 	})
 	return menu
 }

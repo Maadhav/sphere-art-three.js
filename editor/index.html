@@ -61,6 +61,7 @@
 		import { Player } from './js/Player.js';
 		import { Sidebar } from './js/Sidebar.js';
 		import { Menubar } from './js/Menubar.js';
+		import { MenuSidebar } from './js/Menu.Sidebar.js';
 		import { Resizer } from './js/Resizer.js';
 		import { VRButton } from '../examples/jsm/webxr/VRButton.js';
 
@@ -105,6 +106,9 @@
 		
 		var navbar = new NavBar(editor);
 		document.body.appendChild(navbar.dom);
+
+		var menuSidebar = new MenuSidebar(editor);
+		document.body.appendChild(menuSidebar.dom);
 		//
 
 		editor.storage.init(function () {
