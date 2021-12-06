@@ -26,9 +26,15 @@ function MenubarOptions(editor, name) {
 		menu.dom.classList.add('active')
 		var element = document.getElementById('menu-sidebar');
 		if (element.style.display == 'block') {
-			element.style.display = 'none';
+			element.style.opacity = 0;
+			setTimeout(function () {
+				element.style.display = 'none';
+			}, 300);
 		} else {
 			element.style.display = 'block';
+			setTimeout(function () {
+				element.style.opacity = 1;
+			}, 300);
 		}
 	})
 

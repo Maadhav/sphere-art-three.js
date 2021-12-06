@@ -703,6 +703,8 @@ select:hover {
   position: absolute;
   z-index: 1;
   display: none;
+  transition: opacity 300ms ease-out;
+  opacity: 0;
   left: 80px;
   top: 80px;
   width: 300px;

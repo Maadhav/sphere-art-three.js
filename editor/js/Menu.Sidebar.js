@@ -9,7 +9,7 @@ function MenuSidebar(editor) {
         var sidebar = document.getElementById("menu-sidebar");
         var element = document.getElementsByClassName('menu-options active')[0];
         if (element.dataset.icon == 'add') {
-            var menubar_add = MenuSidebarAdd()
+            var menubar_add = MenuSidebarAdd(editor)
 
             sidebar.replaceChildren(menubar_add.dom);
         }
