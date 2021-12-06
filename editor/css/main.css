@@ -18,6 +18,9 @@
   --black-2: #1b1a21;
   --black-3: #2a2d3a;
   --black-4: #24252d;
+  --h1:28px;
+  --h2:24px;
+  --h3:20px;
   --p1: 16px;
   --p2: 14px;
   --p3: 12px;
@@ -588,7 +591,6 @@ select:hover {
   background-color: var(--gray-3);
 }
 
-
 #side-menu-bar {
   height: 100%;
   width: 80px;
@@ -626,7 +628,7 @@ select:hover {
 
 #navbar #navbar-left input {
   font-size: var(--p1);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: white;
   background: transparent;
   border: none !important;
@@ -645,7 +647,7 @@ select:hover {
 #navbar #navbar-center .divider {
   width: 1px;
   height: 30px;
-  opacity: .2;
+  opacity: 0.2;
   background-color: #c4c4c4;
 }
 
@@ -704,11 +706,77 @@ select:hover {
   left: 80px;
   top: 80px;
   width: 300px;
-  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100% - 80px);
   background-color: var(--black-1);
 }
 
+#menu-sidebar-add .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
+
+.menu-sidebar-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+  border: 1px solid rgba(136, 136, 136, 0.2);
+  cursor: pointer;
+}
+
+.menu-sidebar-button:hover .menu-sidebar-button-hover {
+  background: var(--red-violet);
+}
+
+.menu-sidebar-button:hover .menu-sidebar-button-text {
+  color: white;
+}
+
+.menu-sidebar-button:hover .menu-sidebar-button-icon {
+  filter: none;
+}
+
+.menu-sidebar-button-icon {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%) contrast(82%);
+}
+
+
+
+.menu-sidebar-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px 0;
+  justify-content: center;
+  flex: 1;
+}
+
+.menu-sidebar-button-text {
+  font-size: var(--p1);
+  font-weight: 600;
+  text-align: center;
+  padding: 0 5px;
+  color: var(--gray-2);
+}
+
+.menu-sidebar-button-hover {
+  background: transparent;
+  height: 5px;
+  width: 100%;
+}
+
+.header {
+  padding: 6px 14px;
+  font-size: var(--h3);
+  background-color: rgba(255,255,255,0.14);
+  font-weight: 600;
+}
 /* */
 
 @media all and (max-width: 600px) {

@@ -19,16 +19,19 @@ function MenubarOptions(editor, name) {
 
 	menu.add(text)
 	menu.dom.addEventListener('click', function (event) {
-		console.log(document.getElementsByClassName('menu-options'))
-
+		var elements = document.getElementsByClassName('menu-options')
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].classList.remove('active')
+		}
 		menu.dom.classList.add('active')
 		var element = document.getElementById('menu-sidebar');
-		if (element.style.display == 'none') {
-			element.style.display = 'block';
-		} else {
+		if (element.style.display == 'block') {
 			element.style.display = 'none';
+		} else {
+			element.style.display = 'block';
 		}
 	})
+
 	return menu
 }
 
