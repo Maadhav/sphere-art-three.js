@@ -5,7 +5,7 @@ import { AddObjectCommand } from "./commands/AddObjectCommand.js";
 
 export default function MenuSidebarAdd(editor) {
 	var container = new UIDiv();
-	container.setClass("menu-sidebar-add");
+	container.setId("menu-sidebar-add");
 
 	// Group
 	var grid = new UIDiv();
