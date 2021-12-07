@@ -735,7 +735,6 @@ select:hover {
   gap: 15px 0;
   flex-direction: column;
   margin: 0 32px;
-  pointer-events: none;
   font-size: var(--p1);
   font-weight: 600;
   background-color: rgba(255,255,255,0.05);
