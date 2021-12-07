@@ -4,6 +4,9 @@ import {
 	strToU8,
 	convertDataURIToBinary,
 } from "../../examples/jsm/libs/fflate.module.js";
+import { AddObjectCommand } from "./commands/AddObjectCommand.js";
+import { RemoveObjectCommand } from "./commands/RemoveObjectCommand.js";
+import { SetPositionCommand } from "./commands/SetPositionCommand.js";
 
 function NavBar(editor) {
 	/// <navbar>
@@ -17,12 +20,10 @@ function NavBar(editor) {
 	logo.setId("logo");
 	leading.add(logo);
 	var title = new UIInput(editor.config.getKey("project/title"));
-    title.onInput(
-		function () {
-			editor.config.setKey("project/title", title.getValue());
-		}
-	);
-    title.setValue(editor.config.getKey("project/title"));
+	title.onInput(function () {
+		editor.config.setKey("project/title", title.getValue());
+	});
+	title.setValue(editor.config.getKey("project/title"));
 	leading.add(title);
 
 	/// <navbar-center>

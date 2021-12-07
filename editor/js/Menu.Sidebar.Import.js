@@ -13,7 +13,7 @@ export default function MenuSidebarImport(editor) {
 	var importInput = document.createElement("input");
 	importInput.type = "file";
 	importInput.id = "import-input";
-	// importInput.style.display = "none";
+	importInput.style.display = "none";
 
 	var image = document.createElement("img");
 	image.src = "./images/import.svg";
@@ -28,17 +28,21 @@ export default function MenuSidebarImport(editor) {
 	});
 
 	importInput.addEventListener("change", function (event) {
-		var element = document.getElementById("import-input");
-		element.replaceWith(event.target)
-		var element = document.getElementById('import-text')
-		element.innerHTML = "Importing..."
-	})
+		text.setTextContent(
+			importInput.files.length == 0 ? "Upload" : importInput.files[0].name
+		);
+	});
 
 	importContainer.dom.append(importInput, image, text.dom);
 
 	var importButton = new UIDiv();
 	importButton.addClass("button");
 	importButton.setTextContent("Import");
+	importButton.onClick(function () {
+		editor.loader.loadFiles(importInput.files);
+		importInput.type = "";
+		importInput.type = "file";
+	});
 	container.add(importHeader, importContainer, importButton);
 	return container;
 }
