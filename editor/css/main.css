@@ -708,7 +708,7 @@ select:hover {
   left: 80px;
   top: 80px;
   width: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: calc(100% - 80px);
   background-color: var(--black-1);
@@ -717,6 +717,49 @@ select:hover {
 #menu-sidebar-add .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+#menu-sidebar-import {
+  display: flex;
+  gap: 40px 0;
+  padding-bottom: 40px;
+  height: calc(100% - 40px);
+  flex-direction: column;
+}
+
+#menu-sidebar-import .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px 0;
+  flex-direction: column;
+  margin: 0 32px;
+  pointer-events: none;
+  font-size: var(--p1);
+  font-weight: 600;
+  background-color: rgba(255,255,255,0.05);
+  color: var(--gray-2);
+  border: 1px dashed var(--gray-2);
+  border-radius: 5px;
+}
+
+#menu-sidebar-import .container .icon {
+  height: 42px;
+  width: 42px;
+  filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%) contrast(82%);
+}
+
+#menu-sidebar-import .button {
+  padding: 13px 0;
+  display: flex;
+  justify-content: center;
+  margin: 0 32px;
+  font-size: var(--p1);
+  font-weight: 600;
+  color: var(--gray-2);
+  border: 1px solid var(--gray-2);
+  border-radius: 5px;
 }
 
 
