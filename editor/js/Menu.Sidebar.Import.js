@@ -1,8 +1,10 @@
 import { UIDiv, UIInput } from "./libs/ui.js";
 
 export default function MenuSidebarImport(editor) {
+	var files;
 	var container = new UIDiv();
 	container.setId("menu-sidebar-import");
+
 
 	var importHeader = new UIDiv();
 	importHeader.addClass("header");
@@ -27,11 +29,28 @@ export default function MenuSidebarImport(editor) {
 		importInput.click();
 	});
 
-	importInput.addEventListener("change", function (event) {
+	importContainer.dom.addEventListener("drop", function (event) {
+		event.preventDefault();
 		text.setTextContent(
-			importInput.files.length == 0 ? "Upload" : importInput.files[0].name
+			event.dataTransfer.files.length == 0 ? "Upload" : event.dataTransfer.files[0].name
 		);
-	});
+		files = event.dataTransfer.files;
+		importButton.addClass("active");
+		importButton.dom.style.pointerEvents = "auto";
+	})
+
+	importContainer.dom.addEventListener("dragover", function (event) {
+		event.preventDefault();
+		importContainer.addClass("active");
+		image.classList.add("active");
+		event.dataTransfer.dropEffect = 'copy';
+
+	})
+	importContainer.dom.addEventListener("dragenter", function (event) {
+		importContainer.addClass("active");
+		image.classList.add("active");
+	})
+
 
 	importContainer.dom.append(importInput, image, text.dom);
 
@@ -39,10 +58,24 @@ export default function MenuSidebarImport(editor) {
 	importButton.addClass("button");
 	importButton.setTextContent("Import");
 	importButton.onClick(function () {
-		editor.loader.loadFiles(importInput.files);
-		importInput.type = "";
-		importInput.type = "file";
+		editor.loader.loadFiles(files);
+		text.setTextContent("Upload");
+		importContainer.removeClass("active");
+		importButton.removeClass("active");
+		image.classList.remove("active");
+		importButton.dom.style.pointerEvents = "none";
 	});
+	importButton.dom.style.pointerEvents = "none";
+	importInput.addEventListener("change", function (event) {
+		text.setTextContent(
+			importInput.files.length == 0 ? "Upload" : importInput.files[0].name
+		);
+		files = importInput.files;
+		importButton.addClass("active");
+		importContainer.addClass("active");
+		image.classList.add("active");
+	});
+
 	container.add(importHeader, importContainer, importButton);
 	return container;
 }

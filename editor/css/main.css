@@ -743,10 +743,21 @@ select:hover {
   border-radius: 5px;
 }
 
+.container.active {
+  background-color: rgba(255,255,255,0.05);
+  color: white !important;
+  border: 1px dashed white !important;
+}
+
+
 #menu-sidebar-import .container .icon {
   height: 42px;
   width: 42px;
   filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%) contrast(82%);
+}
+
+.icon.active {
+  filter: none !important;
 }
 
 #menu-sidebar-import .button {
@@ -760,6 +771,13 @@ select:hover {
   border: 1px solid var(--gray-2);
   border-radius: 5px;
 }
+
+#menu-sidebar-import .button.active {
+  border-color: white;
+  color: white;
+}
+
+
 
 
 .menu-sidebar-button {

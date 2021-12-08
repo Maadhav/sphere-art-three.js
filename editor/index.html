@@ -188,25 +188,25 @@
 
 		}, false);
 
-		document.addEventListener('drop', function (event) {
+		// document.addEventListener('drop', function (event) {
 
-			event.preventDefault();
+		// 	event.preventDefault();
 
-			if (event.dataTransfer.types[0] === 'text/plain') return; // Outliner drop
+		// 	if (event.dataTransfer.types[0] === 'text/plain') return; // Outliner drop
 
-			if (event.dataTransfer.items) {
+		// 	if (event.dataTransfer.items) {
 
-				// DataTransferItemList supports folders
+		// 		// DataTransferItemList supports folders
 
-				editor.loader.loadItemList(event.dataTransfer.items);
+		// 		editor.loader.loadItemList(event.dataTransfer.items);
 
-			} else {
+		// 	} else {
 
-				editor.loader.loadFiles(event.dataTransfer.files);
+		// 		editor.loader.loadFiles(event.dataTransfer.files);
 
-			}
+		// 	}
 
-		}, false);
+		// }, false);
 
 		function onWindowResize() {
 
