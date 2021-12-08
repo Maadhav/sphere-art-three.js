@@ -718,6 +718,10 @@ select:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+#menu-sidebar-export .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 #menu-sidebar-import {
   display: flex;
@@ -869,7 +873,7 @@ select:hover {
   font-size: var(--p1);
   font-weight: 600;
   text-align: center;
-  padding: 0 5px;
+  padding: 0 10px;
   color: var(--gray-2);
 }
 

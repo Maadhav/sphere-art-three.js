@@ -14,7 +14,7 @@ export default function MenuSidebarExamples(editor) {
     var loader = new THREE.FileLoader();
 
     var items = [
-        { title: 'menubar/examples/Moon', file: 'moon.app.json', image: 'moon.png' },
+        { title: 'Moon', file: 'moon.app.json', image: 'moon.png' },
     ];
     for (const item in items) {
         var example_card = new UIDiv();
@@ -27,7 +27,7 @@ export default function MenuSidebarExamples(editor) {
         example_card_overlay.addClass("example-card-overlay");
         var title = new UIDiv();
         title.addClass("example-card-title");
-        title.setTextContent(editor.strings.getKey(items[item].title));
+        title.setTextContent(items[item].title);
         var actions = new UIDiv();
         actions.addClass("example-card-action");
         var button = new UIDiv();

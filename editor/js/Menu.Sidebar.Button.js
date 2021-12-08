@@ -9,10 +9,13 @@ export default function MenuSidebarButton(label, iconname, onClick) {
 
     var buttonContainer = new UIDiv()
     buttonContainer.setClass("menu-sidebar-button-container")
-    var icon = document.createElement("img")
-    icon.src = "images/" + iconname + ".svg";
-    icon.className = "menu-sidebar-button-icon";
-    buttonContainer.dom.appendChild(icon);
+    if (iconname) {
+
+        var icon = document.createElement("img")
+        icon.src = "images/" + iconname + ".svg";
+        icon.className = "menu-sidebar-button-icon";
+        buttonContainer.dom.appendChild(icon);
+    }
 
     var text = new UIDiv()
     text.setClass("menu-sidebar-button-text")
