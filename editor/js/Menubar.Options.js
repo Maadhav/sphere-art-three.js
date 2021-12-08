@@ -1,5 +1,6 @@
 import { UIDiv } from "./libs/ui.js";
 import MenuSidebarAdd from "./Menu.SideBar.Add.js";
+import MenuSidebarExamples from "./Menu.Sidebar.Examples.js";
 import MenuSidebarImport from "./Menu.Sidebar.Import.js";
 
 function MenubarOptions(editor, name) {
@@ -56,6 +57,10 @@ function MenubarOptions(editor, name) {
 			case "import":
 				var menubar_import = MenuSidebarImport(editor);
 				sidebar.replaceChildren(menubar_import.dom);
+				break;
+			case "examples":
+				var menubar_examples = MenuSidebarExamples(editor);
+				sidebar.replaceChildren(menubar_examples.dom);
 				break;
 			default:
 				var div = new UIDiv();
