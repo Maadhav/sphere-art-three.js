@@ -5,7 +5,9 @@ import MenuSidebarExport from "./Menu.Sidebar.Export.js";
 import MenuSidebarImport from "./Menu.Sidebar.Import.js";
 
 function MenubarOptions(editor, name) {
+	var signals = editor.signals;
 	var strings = editor.strings;
+
 	var menu = new UIDiv();
 	menu.addClass("menu-options");
 	menu.dom.dataset.icon = name;
@@ -18,10 +20,10 @@ function MenubarOptions(editor, name) {
 	var text = new UIDiv();
 	text.setTextContent(strings.getKey("menubar/" + name));
 	text.setClass("text");
-
 	menu.add(text);
 	menu.dom.addEventListener("click", function (event) {
 		var elements = document.getElementsByClassName("menu-options");
+		var viewElement = document.getElementsByClassName("menu-options")[3];
 		var activeelement = document.getElementsByClassName(
 			"menu-options active"
 		)[0];
@@ -30,9 +32,26 @@ function MenubarOptions(editor, name) {
 			elements[i].classList.remove("active");
 		}
 		if (
-			element.style.display == "block" &&
-			activeelement.dataset.icon == menu.dom.dataset.icon
+			(element.style.display == "block" &&
+				activeelement.dataset.icon == menu.dom.dataset.icon) ||
+			menu.dom.dataset.icon == "view"
 		) {
+			if (menu.dom.dataset.icon == "view") {
+				if (viewElement.textContent == "Stop") {
+					var icon = document.createElement("img");
+					icon.src = "images/view.svg";
+					icon.className = "icon";
+					var text = new UIDiv();
+					text.setTextContent("View");
+					text.setClass("text");
+					viewElement.replaceChildren(icon, text.dom);
+					signals.stopPlayer.dispatch();
+				} else {
+					viewElement.classList.add("active");
+					viewElement.textContent = "Stop";
+					signals.startPlayer.dispatch();
+				}
+			}
 			element.style.opacity = 0;
 			setTimeout(function () {
 				element.style.display = "none";

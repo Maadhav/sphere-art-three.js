@@ -330,8 +330,8 @@ select:hover {
 
 #script {
   position: absolute;
-  top: 32px;
-  left: 0;
+  top: 80px;
+  left: 80px;
   right: 300px;
   bottom: 0;
   opacity: 0.9;
@@ -339,8 +339,8 @@ select:hover {
 
 #player {
   position: absolute;
-  top: 32px;
-  left: 0;
+  top: 80px;
+  left: 80px;
   right: 300px;
   bottom: 0;
 }
