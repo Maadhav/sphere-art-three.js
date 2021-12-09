@@ -18,9 +18,9 @@
   --black-2: #1b1a21;
   --black-3: #2a2d3a;
   --black-4: #24252d;
-  --h1:28px;
-  --h2:24px;
-  --h3:20px;
+  --h1: 28px;
+  --h2: 24px;
+  --h3: 20px;
   --p1: 16px;
   --p2: 14px;
   --p3: 12px;
@@ -741,23 +741,23 @@ select:hover {
   margin: 0 32px;
   font-size: var(--p1);
   font-weight: 600;
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(255, 255, 255, 0.05);
   color: var(--gray-2);
   border: 1px dashed var(--gray-2);
   border-radius: 5px;
 }
 
 .container.active {
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(255, 255, 255, 0.05);
   color: white !important;
   border: 1px dashed white !important;
 }
 
-
 #menu-sidebar-import .container .icon {
   height: 42px;
   width: 42px;
-  filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%) contrast(82%);
+  filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%)
+    contrast(82%);
 }
 
 .icon.active {
@@ -787,7 +787,7 @@ select:hover {
   width: 100%;
 }
 
-.example-card-overlay{
+.example-card-overlay {
   display: flex;
   padding: 9px 12px;
   height: 227px;
@@ -797,7 +797,7 @@ select:hover {
   position: absolute;
   z-index: 2;
 }
-.example-card-image{
+.example-card-image {
   position: absolute;
   z-index: 1;
   height: 245px;
@@ -828,8 +828,6 @@ select:hover {
   border-radius: 5px;
 }
 
-
-
 .menu-sidebar-button {
   display: flex;
   flex-direction: column;
@@ -855,10 +853,9 @@ select:hover {
   width: 42px;
   height: 42px;
   background: transparent;
-  filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%) contrast(82%);
+  filter: invert(58%) sepia(9%) saturate(9%) hue-rotate(340deg) brightness(91%)
+    contrast(82%);
 }
-
-
 
 .menu-sidebar-button-container {
   display: flex;
@@ -886,8 +883,99 @@ select:hover {
 .header {
   padding: 6px 14px;
   font-size: var(--h3);
-  background-color: rgba(255,255,255,0.14);
+  background-color: rgba(255, 255, 255, 0.14);
   font-weight: 600;
+}
+
+.setting-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0px;
+  padding: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0 14px;
+}
+
+.row-title {
+  font-size: var(--p1);
+  flex: 1;
+  font-weight: 500;
+  color: var(--gray-1);
+}
+
+.sidebar-checkbox {
+}
+
+.sidebar-input-text {
+  background-color: transparent;
+  color: var(--gray-1);
+  font-weight: 600;
+  font-size: var(--p1);
+  border-radius: 5px !important;
+  border: 1px solid var(--gray-1) !important;
+  padding: 7px 10px !important;
+}
+
+.sidebar-number {
+  background-color: transparent;
+  color: var(--gray-1);
+  font-weight: 500;
+  font-size: var(--p1);
+  border-radius: 5px !important;
+  border: 1px solid var(--gray-1) !important;
+  padding: 5px 8px !important;
+  width: 50px;
+}
+
+.sidebar-select {
+  background-color: transparent;
+  color: var(--gray-1);
+  font-weight: 500;
+  max-width: 100px;
+  font-size: var(--p1);
+  border-radius: 5px !important;
+  border: 1px solid var(--gray-1) !important;
+  padding: 5px 8px !important;
+}
+
+.shortcuts th td {
+  border: 1px solid var(--gray-1);
+}
+
+.shortcuts tr:first-child th:first-child,
+.shortcuts tr:first-child td:first-child {
+  border-top-left-radius: 5px;
+}
+
+.shortcuts tr:first-child th:last-child,
+.shortcuts tr:first-child td:last-child {
+  border-top-right-radius: 5px;
+}
+
+.shortcuts tr:last-child th:first-child,
+.shortcuts tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.shortcuts tr:last-child th:last-child,
+.shortcuts tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+.shortcuts td {
+  padding: 5px;
+  font-size: var(--p2);
+  border: 1px solid var(--gray-1);
+}
+
+.shortcuts th {
+  padding: 6px;
+  font-size: var(--p1);
+  font-weight: 500;
+  border: 1px solid var(--gray-1);
 }
 /* */
 
@@ -965,7 +1053,7 @@ select:hover {
 
   select:hover {
     color: #ccc;
-    background-color: #4f4f4f;
+    background-color: #2a2d3a;
   }
 
   /* UI */
@@ -1026,15 +1114,16 @@ select:hover {
 
   .Outliner {
     color: #fff;
-    background: #2a2d3a;
+    background: var(--black-4);
   }
 
   .Outliner .option:hover {
-    background-color: rgba(21, 60, 94, 0.5);
+    background: rgba(227, 225, 227, 0.2);
+
   }
 
   .Outliner .option.active {
-    background-color: rgba(21, 60, 94, 1);
+    background-color: var(--gray-1);
   }
 
   .TabbedPanel .Tabs {

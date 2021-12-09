@@ -3,6 +3,7 @@ import MenuSidebarAdd from "./Menu.SideBar.Add.js";
 import MenuSidebarExamples from "./Menu.Sidebar.Examples.js";
 import MenuSidebarExport from "./Menu.Sidebar.Export.js";
 import MenuSidebarImport from "./Menu.Sidebar.Import.js";
+import MenuSidebarSettings from "./Menu.Sidebar.Settings.js";
 
 function MenubarOptions(editor, name) {
 	var strings = editor.strings;
@@ -66,6 +67,10 @@ function MenubarOptions(editor, name) {
 			case "export":
 				var menubar_export = MenuSidebarExport(editor);
 				sidebar.replaceChildren(menubar_export.dom);
+				break;
+			case "settings":
+				var menubar_settings = MenuSidebarSettings(editor);
+				sidebar.replaceChildren(menubar_settings.dom);
 				break;
 			default:
 				var div = new UIDiv();
