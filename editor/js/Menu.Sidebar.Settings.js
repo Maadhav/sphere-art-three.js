@@ -253,7 +253,26 @@ export default function MenuSidebarSettings(editor) {
     text.setTextContent("History");
     var persistentContainer = new UIDiv();
     persistentContainer.dom.style = "display: flex; align-items: center; gap: 0 10px;";
-    var checkbox = checkboxField(editor);
+    var checkbox = checkboxField({
+        value: config.getKey( 'settings/history' ),
+        onChange: function (value) {
+            config.setKey( 'settings/history', value );
+
+		if ( value ) {
+
+			alert( 'The history will be preserved across sessions.\nThis can have an impact on performance when working with textures.' );
+
+			var lastUndoCmd = history.undos[ history.undos.length - 1 ];
+			var lastUndoId = ( lastUndoCmd !== undefined ) ? lastUndoCmd.id : 0;
+			editor.history.enableSerialization( lastUndoId );
+
+		} else {
+
+			signals.historyChanged.dispatch();
+
+		}
+        }
+    });
     persistentContainer.dom.append(checkbox)
     var persistent = new UIText();
     persistent.dom.style = "font-size: var(--p3); font-weight: 400;";
