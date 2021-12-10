@@ -993,16 +993,16 @@ select:hover {
   }
 
   #viewport {
-    left: 0;
+    left: 80px;
     right: 0;
     top: 80px;
     height: calc(100% - 352px);
   }
 
   #script {
-    left: 0;
+    left: 80px;
     right: 0;
-    top: 32px;
+    top: 80px;
     height: calc(100% - 352px);
   }
 
@@ -1014,7 +1014,7 @@ select:hover {
   }
 
   #sidebar {
-    left: 0;
+    left: 80px;
     width: 100%;
     top: calc(100% - 320px);
     bottom: 0;
