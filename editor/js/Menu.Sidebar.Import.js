@@ -74,6 +74,7 @@ export default function MenuSidebarImport(editor) {
 		importButton.addClass("active");
 		importContainer.addClass("active");
 		image.classList.add("active");
+		importButton.dom.style.pointerEvents = "auto";
 	});
 
 	container.add(importHeader, importContainer, importButton);
